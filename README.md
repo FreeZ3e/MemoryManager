@@ -9,7 +9,7 @@
         Hendles.hpp:
                     Allocate_Check类用于对delete次数的检测,若不符合则会抛出异常.
                     
-                    HandleFunction类提供了用于new的handle函数.
+                    HandleFunction类提供了用于operator new的handle函数.
     
                     New_Handles类提供了一个函数指针,用于重新设置handles函数.
 
