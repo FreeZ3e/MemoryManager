@@ -1,37 +1,18 @@
 # MemoryManager
 
 #### 介绍
-简单的内存池和用于new函数的handle实现,并提供了delete的检测.
+简单的内存池和用于new函数的handle实现,并提供了对delete使用次数的检测.
 
-#### 软件架构
-软件架构说明
+#### 架构
+        Handles.hpp和MemoryPool.hpp分别是handle函数和内存池,主要用于类中重载operator new和operator new[]以及delete,delete[]的定制实现
 
+        Hendles.hpp:
+                    Allocate_Check类用于对delete次数的检测,若不符合则会抛出异常.
+                    
+                    HandleFunction类提供了用于new的handle函数.
+    
+                    New_Handles类提供了一个函数指针,用于重新设置handles函数.
 
-#### 安装教程
-
-1.  xxxx
-2.  xxxx
-3.  xxxx
-
-#### 使用说明
-
-1.  xxxx
-2.  xxxx
-3.  xxxx
-
-#### 参与贡献
-
-1.  Fork 本仓库
-2.  新建 Feat_xxx 分支
-3.  提交代码
-4.  新建 Pull Request
-
-
-#### 特技
-
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2.  Gitee 官方博客 [blog.gitee.com](https://blog.gitee.com)
-3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解 Gitee 上的优秀开源项目
-4.  [GVP](https://gitee.com/gvp) 全称是 Gitee 最有价值开源项目，是综合评定出的优秀开源项目
-5.  Gitee 官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6.  Gitee 封面人物是一档用来展示 Gitee 会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+        
+        MemoryPool.hpp:简单的内存池实现.
+                    
